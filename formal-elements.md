@@ -68,12 +68,20 @@
 
 זהו את שלושת המשחקים הדומים ביותר. לגבי כל אחד מהם:
 
-* tap tap revenge: <img src="https://www.gamezebo.com/wp-content/uploads/2021/08/games-9088-mza_6515523580078359131-320x400.jpeg">
+* tap tap revenge 
 המילים שחיפשתי כדי למצוא אותו היו game tap before it touches the ground
-* Piano game : <img src="https://cdn.apkmonk.com/images/game.piano.music.tiles.challenge.png">
+<img src="https://www.gamezebo.com/wp-content/uploads/2021/08/games-9088-mza_6515523580078359131-320x400.jpeg">
+
+
+* Piano game 
 המילים שחיפשתי כדי למצוא אותו היו game of tapping on moving object at the right time
-* Osu : <img src="https://a.fsdn.com/con/app/proj/osu.mirror/screenshots/osulazer.jpeg/max/max/1">
+<img src="https://cdn.apkmonk.com/images/game.piano.music.tiles.challenge.png">
+
+
+* Osu
 המשחק הזה היה המשחק שהביא לנו השראה עבור המשחק שלנו.
+<img src="https://a.fsdn.com/con/app/proj/osu.mirror/screenshots/osulazer.jpeg/max/max/1">
+
 
 *  ניתן לראות כי כל המשחקים יש משהו דומה, שזה ללחוץ על כפתורים על פי מוזיקה מה שמשפר את חוש הקצב והקורדינציה ומושך אנשים לשחק בזה משום שכולנו אוהבים מוזיקה וכמה כיף זה להרגיש שאתה מנגן. אנחנו באים להביא קונספט אחר לרעיון, הרעיון הבלבול ושיפור הקורדינציה בתנאים קיצוניים, בכל שלב נעלה את הרמה ואף נשנה לו צבעים והשחקן בנוסף ללחיצת המקש צריך לעקוב אחרי הצבעים שצריך ללחוץ עליהם.
 
