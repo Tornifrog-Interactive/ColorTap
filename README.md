@@ -10,7 +10,7 @@
 
 המשחק מתאים לפלטפורמות: מחשב רגיל / טלפון נייד / אינטרנט.
 
-CoreOnly:
+# CoreOnly:
 
 המימוש של המשחק הוא להפיל צבעים בצבע רנדומלי ובמיקומים רנדומלים.
 
@@ -22,7 +22,7 @@ CoreOnly:
 
 אין סיום למשחק משום שזה רק הליבה.
 
-[קישור למשחק (Core Only)](https://tornifrog.itch.io/colortap)
+[קישור למשחק](https://tornifrog.itch.io/colortap)
 
 <img width="1102" alt="image" src="https://user-images.githubusercontent.com/18744772/234272639-f398bd85-93f3-45ac-b39b-a1e9cae4f3a4.png">
 
