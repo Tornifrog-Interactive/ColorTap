@@ -1,6 +1,6 @@
+# ColorTap
 <div dir='rtl' lang='he'>
 
-# ColorTap
 
 **Sharpen your reflexes and hand-eye coordination with our addictively fun color-matching game!**
 
@@ -10,7 +10,7 @@
 
 המשחק מתאים לפלטפורמות: מחשב רגיל / טלפון נייד / אינטרנט.
 
-# CoreOnly:
+# CoreOnly
 
 המימוש של המשחק הוא להפיל צבעים בצבע רנדומלי ובמיקומים רנדומלים.
 
