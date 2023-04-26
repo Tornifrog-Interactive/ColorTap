@@ -9,7 +9,7 @@ public class SetObjectColor : MonoBehaviour
     {
         ["Red"] = Color.red,
         ["Green"] = Color.green,
-        ["Black"] = Color.black
+        ["Yellow"] = Color.yellow
     };
 
     private Material _objectMaterial;
@@ -24,11 +24,5 @@ public class SetObjectColor : MonoBehaviour
         _objectMaterial.color = objectColor.Value;
         gameObject.GetComponent<Renderer>().material = _objectMaterial;
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnColors : MonoBehaviour
@@ -7,29 +5,30 @@ public class SpawnColors : MonoBehaviour
     [SerializeField] ColorObject colorObject;
 
     [SerializeField] float spawnRate = 1.0f;
+    [SerializeField] float spawnIncrementRate = 1.05f;
 
     [SerializeField] int spawnAmount = 1;
-
-    [SerializeField] Vector3 velocityOfSpawnedObject;
-
-    [SerializeField] float rotationDirection = 0f;
-
+    
     public float buffer = 1f;
 
-    private float _screenWidth;
+    private readonly float _diameterToRadius = 0.5f;
+    private readonly float _convertToWorldUnits = 2f;
+    private float _minScreenX;
+    private float _maxScreenX;
 
     void Start()
     {
-        _screenWidth = Camera.main.orthographicSize * 2 * Camera.main.aspect;
-
-        InvokeRepeating(nameof(Spawn), 0f, this.spawnRate);
+        float screenWidth = Camera.main.orthographicSize * _convertToWorldUnits * Camera.main.aspect;
+        _minScreenX = (-screenWidth * _diameterToRadius) + buffer;
+        _maxScreenX = (screenWidth * _diameterToRadius) - buffer;
+        Spawn();
     }
 
     private void Spawn()
     {
         for (int i = 0; i < this.spawnAmount; i++)
         {
-            float randomX = Random.Range((-_screenWidth / 2f) + buffer, (_screenWidth / 2f) - buffer);
+            float randomX = Random.Range(_minScreenX, _maxScreenX);
 
             var position = transform.position;
             Vector3 positionOfSpawnedObject = new Vector3(
@@ -38,13 +37,16 @@ public class SpawnColors : MonoBehaviour
                 position.z
             );
 
-            Quaternion rotationOfSpawnedObject = Quaternion.Euler(0f, rotationDirection, 0f);
             GameObject newObject = Instantiate(
                 colorObject.gameObject,
                 positionOfSpawnedObject,
-                rotationOfSpawnedObject
+                Quaternion.identity // no rotation
+                
             );
             newObject.GetComponent<ColorObject>();
         }
+
+        spawnRate /= spawnIncrementRate;
+        Invoke(nameof(Spawn), spawnRate);
     }
 }

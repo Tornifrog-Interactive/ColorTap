@@ -8,6 +8,9 @@ TagManager:
   - Green
   - Black
   - Floor
+  - Orange
+  - Cyan
+  - Yellow
   layers:
   - Default
   - TransparentFX

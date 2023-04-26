@@ -1,25 +1,29 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEditor.UI;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public Text scoreText;
     public Text currentColorText;
+    public Text timeText;
     public int score = 0;
+    public int gameTime = 60;
     public float minChangeColorTime = 1f;
     public float maxChangeColorTime = 5f;
 
+    public GameObject spawnerColorObject;
+    
     private KeyValuePair<string,Color> _currentColor;
+    private readonly int _minRangeForRandom = 0;
+    private readonly float _delayInTime = 1f;
     
     private readonly Dictionary<string, Color> _colorBank = new()
     {
         ["Red"] = Color.red,
         ["Green"] = Color.green,
-        ["Black"] = Color.black
+        ["Yellow"] = Color.yellow
     };
     
     // Start is called before the first frame update
@@ -27,11 +31,12 @@ public class GameManager : MonoBehaviour
     { 
         scoreText.text = $"Score: {score}";
         ChangeColor();
+        GameTimer();
     }
 
     private void ChangeColor()
     {
-        _currentColor = _colorBank.ElementAt(Random.Range(0, _colorBank.Count));
+        _currentColor = _colorBank.ElementAt(Random.Range(_minRangeForRandom, _colorBank.Count));
         currentColorText.text = _currentColor.Key;
         currentColorText.color = _currentColor.Value;
 
@@ -39,6 +44,19 @@ public class GameManager : MonoBehaviour
         Invoke(nameof(ChangeColor), delay);
     }
 
+    private void GameTimer()
+    {
+        if (gameTime <= 0)
+        {
+            timeText.text = "Game Over!";
+            Destroy(spawnerColorObject);
+            return;
+        }
+
+        timeText.text = $"{gameTime--} Seconds Left";
+        Invoke(nameof(GameTimer), _delayInTime);
+    }
+    
     public void AddScore(UnityEngine.GameObject other)
     {
         if (other.CompareTag(_currentColor.Key))
@@ -46,12 +64,6 @@ public class GameManager : MonoBehaviour
             scoreText.text = $"Score: {++score}";
             Destroy(other);
         }
-        // we can add something here if he dose something bad.
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // we can add something here if he clicks on wrong color.
     }
 }
